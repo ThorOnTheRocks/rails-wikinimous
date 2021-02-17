@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light border border-1">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Wikinimous</span>
+		<%= link_to "Go back", articles_path %>
+  </div>
+</nav>
+
+<div class="container translate-middle mt-4">
+	<h1 style= "text-align: center"> <%= @article.title %> </h1>
+	<%= link_to "Edit article", edit_article_path(@article.id) %>
+	<hr>
+	<p style= "text-align: center"> <%=  @article.content %> </p>
+</div>
+
+<%= link_to "Delete",
+            article_path(@article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
